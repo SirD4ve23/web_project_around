@@ -1,0 +1,29 @@
+.profile {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  margin-bottom: 50px;
+  max-width: 880px;
+  max-height: 120px;
+  grid-template-areas:
+    "element1 element2 element4"
+    "element1 element3 element4";
+}
+
+.profile__content-avatar-image {
+  width: 100%;
+}
+
+.profile__info-name {
+  width: 100%;
+  text-align: left;
+  font-family: "Inter";
+  grid-area: element2;
+}
+
+.profile__info-button {
+  text-align: left;
+  font-family: "Inter";
+  grid-area: element2;
+}
