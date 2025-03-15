@@ -7,8 +7,6 @@
 }
 
 .elements {
-  max-width: 282px;
-  max-height: 361px;
   position: relative;
   max-width: 282px;
   max-height: 361px;
@@ -29,12 +27,14 @@
 
 .elements__info {
   max-width: 246px;
-  font-family: "Inter-Black";
+  font-family: "Inter";
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
   box-sizing: content-box;
+  margin: 26px auto;
 }
 
 .elements__info-title {
@@ -60,5 +60,18 @@
 }
 
 .elements__info-button_active {
-  background-image: url(../images/like_actived.svg);
+  background: url(../images/images/like_actived.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 584px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 21px;
+    column-gap: 17px;
+    max-width: 880px;
+  }
 }
