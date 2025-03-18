@@ -86,7 +86,6 @@
 
 .popup__button-close {
   height: 40px;
-  /* transform: rotate(-45deg); */
   background-image: url(../images/close-icon.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -99,7 +98,17 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 584px) {
+  .popup_profile {
+    max-width: 282px;
+    align-items: center;
+  }
+
+  .popup_add {
+    max-width: 282px;
+    align-items: center;
+  }
+
   .popup_opened {
     flex-direction: column-reverse;
   }

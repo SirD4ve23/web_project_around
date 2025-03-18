@@ -2,7 +2,6 @@
   /* grid-template-rows: 1fr 3fr 1fr; */
   margin-bottom: 50px;
   width: 880px;
-  height: 120px;
   display: grid;
   grid-template-columns: 120px auto 150px;
   grid-template-rows: repeat(2, 1fr);
@@ -90,25 +89,29 @@
   .profile {
     max-width: 282px;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
   }
 
   .profile__info {
-    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "avatar"
       "name about"
+      "description"
       "add";
-    grid-template-columns: 120px auto 150px;
-    justify-items: center;
+    justify-items: center; */
   }
 
   .profile__avatar {
     margin-bottom: 30px;
     justify-self: center;
-  }
-
-  .profile__info-name {
-    margin-left: 0;
+    /*  grid-area: avatar; */
   }
 
   .profile__info-name {
@@ -119,6 +122,8 @@
     line-height: 27px;
     text-align: center;
     color: #ffffff;
+    margin-left: 0;
+    /* grid-area: name; */
   }
 
   .profile__info-description {
@@ -129,16 +134,20 @@
     line-height: 17px;
     text-align: center;
     color: #ffffff;
+    /* grid-area: description; */
   }
 
   .profile__info-button {
-    margin-bottom: 40px;
-    margin-left: 6px;
+    /* margin-bottom: 40px;
+    margin-left: 6px; */
+    /* grid-area: about; */
   }
 
   .profile__info-add-button {
+    background-image: url(../images/add_large.png);
     max-width: 282px;
     width: 100%;
     margin-top: 36px;
+    /* grid-area: add; */
   }
 }
