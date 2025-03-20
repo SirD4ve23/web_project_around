@@ -19,6 +19,7 @@
   grid-area: name;
   align-items: center;
   gap: 20px;
+  overflow: hidden;
 }
 
 .profile__content-avatar-image {
@@ -34,6 +35,7 @@
   font-size: 42px;
   line-height: 48px;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .profile__info-description {
@@ -85,7 +87,7 @@
   opacity: 0.5;
 }
 
-@media screen and (max-width: 584px) {
+@media screen and (max-width: 880px) {
   .profile {
     max-width: 282px;
     width: 100%;
