@@ -100,7 +100,7 @@
 
 @media screen and (max-width: 584px) {
   .popup_profile {
-    max-width: 282px;
+    /* max-width: 282px; */
     align-items: center;
   }
 

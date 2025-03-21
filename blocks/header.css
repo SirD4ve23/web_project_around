@@ -16,6 +16,6 @@
     max-width: 320px;
     width: 100%;
     margin-top: 34px;
-    padding-left: 27px;
+    box-sizing: border-box;
   }
 }
