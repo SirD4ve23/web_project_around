@@ -92,7 +92,12 @@
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-  /* margin-bottom: 350px; */
+  margin-bottom: 350px;
+}
+
+.popup__button-close_image {
+  margin-bottom: 0;
+  margin-left: 100%;
 }
 
 .popup__button-close:hover {
