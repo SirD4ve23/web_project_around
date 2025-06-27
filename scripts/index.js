@@ -22,6 +22,8 @@ const closePopupImage = popupImage.querySelector(".popup__button-close");
 
 const cardSection = document.querySelector(".cards");
 
+const popups = [popupProfile, popupAddCard, popupImage];
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -49,6 +51,15 @@ const initialCards = [
   },
 ];
 
+function handleEscClose(event) {
+  if (event.key === "Escape") {
+    popups.forEach((popup) => {
+      popup.classList.remove("popup_opened");
+      document.removeEventListener("keydown", handleEscClose);
+    });
+  }
+}
+
 function createCard(name, link) {
   //ir por template
   //duplicarlo
@@ -64,6 +75,7 @@ function createCard(name, link) {
   newCard
     .querySelector(".elements__image")
     .addEventListener("click", function () {
+      document.addEventListener("keydown", handleEscClose);
       popupImage.classList.add("popup_opened");
       const img = popupImage.querySelector("img");
       img.src = link;
@@ -87,22 +99,27 @@ editButton.addEventListener("click", function () {
   popupProfile.classList.add("popup_opened");
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
+  document.addEventListener("keydown", handleEscClose);
 });
 
 addButton.addEventListener("click", function () {
   popupAddCard.classList.add("popup_opened");
+  document.addEventListener("keydown", handleEscClose);
 });
 
 closePopupProfile.addEventListener("click", function () {
   popupProfile.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleEscClose);
 });
 
 closePopupaddCard.addEventListener("click", function () {
   popupAddCard.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleEscClose);
 });
 
 closePopupImage.addEventListener("click", function () {
   popupImage.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleEscClose);
 });
 
 formProfile.addEventListener("submit", function (event) {
@@ -130,4 +147,13 @@ formAddCard.addEventListener("submit", function (event) {
 initialCards.forEach(function (item) {
   const card = createCard(item.name, item.link);
   cardSection.append(card);
+});
+
+popups.forEach((popup) => {
+  popup.addEventListener("click", (event) => {
+    if (event.target.classList.contains("popup")) {
+      popup.classList.remove("popup_opened");
+      document.removeEventListener("keydown", handleEscClose);
+    }
+  });
 });
