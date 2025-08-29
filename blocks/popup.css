@@ -174,4 +174,12 @@
     margin-left: 260px;
     margin-bottom: 0;
   }
+
+  .popup__error {
+    color: red;
+    width: 100%;
+    max-width: 358px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
 }
