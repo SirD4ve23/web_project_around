@@ -1,9 +1,9 @@
-import { handleEscClose, openPopupImage } from "./utils.js";
 export default class Card {
-  constructor(name, link, templateSelector) {
+  constructor(name, link, templateSelector, { handleClick }) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
+    this._handleClick = handleClick;
   }
 
   renderCard() {
@@ -25,8 +25,7 @@ export default class Card {
     this._element
       .querySelector(".elements__image")
       .addEventListener("click", () => {
-        document.addEventListener("keydown", handleEscClose);
-        openPopupImage(this._name, this._link);
+        this._handleClick(this._name, this._link);
       });
     this._element
       .querySelector(".elements__trash")

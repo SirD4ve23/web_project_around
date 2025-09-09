@@ -1,4 +1,5 @@
 import Card from "./Card.js";
+import PopupWithImage from "./PopupWithImage.js";
 export const popupProfile = document.querySelector(".popup_profile");
 export const formProfile = popupProfile.querySelector(".popup__form");
 export const nameInput = formProfile.querySelector(".popup__form-name");
@@ -30,6 +31,8 @@ export const popupImage = document.querySelector(".popup_image");
 export const closePopupImage = popupImage.querySelector(".popup__button-close");
 
 export const cardSection = document.querySelector(".cards");
+
+export const popupImageObj = new PopupWithImage(".popup_image");
 
 export const popups = [popupProfile, popupAddCard, popupImage];
 
@@ -85,6 +88,10 @@ export function openPopupImage(name, link) {
 }
 
 export function createCard(name, link) {
-  const newCard = new Card(name, link, ".card-template");
+  const newCard = new Card(name, link, ".card-template", {
+    handleClick: (name, link) => {
+      popupImageObj.open(name, link);
+    },
+  });
   return newCard.renderCard();
 }
